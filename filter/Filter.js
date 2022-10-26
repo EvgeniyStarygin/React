@@ -21,10 +21,10 @@ var Filter = React.createClass({
   },
 
   sortWords: function (EO) {
-    this.setState({ isSorted: !this.state.isSorted });
+    this.state.isSorted = !this.state.isSorted;
     this.state.isSorted
-      ? this.setState({ wordsToShow: this.props.words })
-      : this.setState({ wordsToShow: this.props.words.slice(0).sort() });
+      ? this.setState({ wordsToShow: this.props.words.slice(0).sort() })
+      : this.setState({ wordsToShow: this.props.words });
   },
 
   reset: function (EO) {
@@ -46,7 +46,7 @@ var Filter = React.createClass({
       React.DOM.input(
         {
           type: "checkbox",
-          onClick: this.sortWords,
+          onChange: this.sortWords,
           checked: this.state.isSorted,
         },
         null
