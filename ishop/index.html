@@ -6,11 +6,11 @@
     <title>IShop</title>
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="Components/ItemsTable.js"></script>
+    <script src="Components/Shop.js"></script>
     <script src="Components/ItemsTableHeader.js"></script>
-    <script src="Components/ItemsTableCaption.js"></script>
-    <script src="Components/ItemsTableBody.js"></script>
-    <script src="Components/ItemsTableRow.js"></script>
+    <script src="Components/ShopName.js"></script>
+    <script src="Components/ShopItemsList.js"></script>
+    <script src="Components/ShopItem.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -29,7 +29,7 @@
         ];
 
         ReactDOM.render(
-            React.createElement(ItemsTable, { shop: shopName, items: itemsArr, headers: headersArr }),
+            React.createElement(Shop, { shop: shopName, items: itemsArr, headers: headersArr }),
             document.getElementById("container")
         );
 
