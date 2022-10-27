@@ -21,10 +21,13 @@ var Filter = React.createClass({
   },
 
   sortWords: function (EO) {
-    this.state.isSorted = !this.state.isSorted;
-    this.state.isSorted
-      ? this.setState({ wordsToShow: this.props.words.slice(0).sort() })
-      : this.setState({ wordsToShow: this.props.words });
+    this.setState({ isSorted: !this.state.isSorted }, () => {
+      this.setState({
+        wordsToShow: this.state.isSorted
+          ? this.props.words.slice(0).sort()
+          : this.props.words,
+      });
+    });
   },
 
   reset: function (EO) {
