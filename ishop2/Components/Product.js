@@ -9,7 +9,6 @@ var Product = React.createClass({
     cbProductSelected: React.PropTypes.func.isRequired,
     isSelected: React.PropTypes.bool.isRequired,
     cbDeleteProduct: React.PropTypes.func.isRequired,
-    isDeleted: React.PropTypes.bool.isRequired,
   },
 
   productClicked: function (EO) {
@@ -22,24 +21,19 @@ var Product = React.createClass({
   },
 
   render: function () {
-    return !this.props.isDeleted
-      ? React.DOM.tr(
-          {
-            className: this.props.isSelected ? "orange" : "",
-            onClick: this.productClicked,
-          },
-          React.DOM.td(null, this.props.name),
-          React.DOM.td(null, this.props.price),
-          React.DOM.td(null, React.DOM.img({ src: this.props.photo }, null)),
-          React.DOM.td(null, this.props.itemsLeft),
-          React.DOM.td(
-            null,
-            React.DOM.button(
-              { onClick: this.deleteProduct },
-              "Delete"
-            )
-          )
-        )
-      : null;
+    return React.DOM.tr(
+      {
+        className: this.props.isSelected ? "orange" : "",
+        onClick: this.productClicked,
+      },
+      React.DOM.td(null, this.props.name),
+      React.DOM.td(null, this.props.price),
+      React.DOM.td(null, React.DOM.img({ src: this.props.photo }, null)),
+      React.DOM.td(null, this.props.itemsLeft),
+      React.DOM.td(
+        null,
+        React.DOM.button({ onClick: this.deleteProduct }, "Delete")
+      )
+    );
   },
 });

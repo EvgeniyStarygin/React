@@ -54,7 +54,6 @@ var Shop = React.createClass({
             cbProductSelected: this.productSelected,
             isSelected: this.state.selectedProductCode == item.code,
             cbDeleteProduct: this.deleteProduct,
-            isDeleted: this.state.deletedProductCode == item.code,
           })
         )
       )
