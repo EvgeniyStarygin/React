@@ -13,21 +13,25 @@ var Filter = React.createClass({
   },
 
   showWords: function () {
-    var key = 1;
     var arr = this.state.wordsToShow.filter((word) =>
       word.includes(this.state.filterByText)
     );
-    return arr.map((word) => React.DOM.div({ key: key++ }, word));
+    return arr.map((word, index) => React.DOM.div({ key: index }, word));
   },
 
   sortWords: function (EO) {
-    this.setState({ isSorted: !this.state.isSorted }, () => {
+    /*this.setState({ isSorted: !this.state.isSorted }, () => {
       this.setState({
         wordsToShow: this.state.isSorted
           ? this.props.words.slice(0).sort()
           : this.props.words,
       });
-    });
+    });*/
+    this.setState({ isSorted: !this.state.isSorted });
+    this.setState({wordsToShow: EO.target.checked
+          ? this.props.words.slice(0).sort()
+          : this.props.words,
+      });
   },
 
   reset: function (EO) {

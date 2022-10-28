@@ -1,0 +1,19 @@
+.IShop {
+    border-collapse: collapse;
+}
+
+.IShop img {
+    width: 100px;
+    height: 100px;
+}
+
+.IShop td, .IShop th {
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.orange {
+    background-color: orange;
+}
