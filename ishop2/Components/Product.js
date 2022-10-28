@@ -13,12 +13,12 @@ var Product = React.createClass({
   },
 
   productClicked: function (EO) {
-    this.props.cbProductSelected(EO.currentTarget.dataset.code);
+    this.props.cbProductSelected(this.props.code);
   },
 
   deleteProduct: function (EO) {
     EO.stopPropagation();
-    this.props.cbDeleteProduct(EO.target.dataset.code);
+    this.props.cbDeleteProduct(this.props.code);
   },
 
   render: function () {
@@ -26,7 +26,6 @@ var Product = React.createClass({
       ? React.DOM.tr(
           {
             className: this.props.isSelected ? "orange" : "",
-            "data-code": this.props.code,
             onClick: this.productClicked,
           },
           React.DOM.td(null, this.props.name),
@@ -36,7 +35,7 @@ var Product = React.createClass({
           React.DOM.td(
             null,
             React.DOM.button(
-              { "data-code": this.props.code, onClick: this.deleteProduct },
+              { onClick: this.deleteProduct },
               "Delete"
             )
           )

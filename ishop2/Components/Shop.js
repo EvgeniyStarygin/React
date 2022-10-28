@@ -17,7 +17,6 @@ var Shop = React.createClass({
     return {
       productsToShow: this.props.items,
       selectedProductCode: null,
-      deletedProductCode: null,
     };
   },
 
@@ -26,12 +25,10 @@ var Shop = React.createClass({
   },
 
   deleteProduct: function (code) {
-    this.setState({ deletedProductCode: code }, () => {
-      this.setState({
-        productsToShow: this.state.productsToShow.filter(
-          (item) => item.code != this.state.deletedProductCode
-        ),
-      });
+    this.setState({
+      productsToShow: this.state.productsToShow.filter(
+        (item) => item.code != code
+      ),
     });
   },
 
