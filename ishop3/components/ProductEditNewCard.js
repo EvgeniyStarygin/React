@@ -23,9 +23,9 @@ class ProductEditNewCard extends React.Component {
   };
 
   state = {
-    productName: this.props.product.name,
-    productPrice: this.props.product.price,
-    productQuantity: this.props.product.itemsLeft,
+    productName: this.props.product.name || "",
+    productPrice: this.props.product.price || "",
+    productQuantity: this.props.product.itemsLeft || "",
     productNameValidationMessage: "",
     productPriceValidationMessage: "",
     productQuantityValidationMessage: "",
