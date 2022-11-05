@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Книга",
+        "price": 100,
+        "photo": "https://www.mann-ivanov-ferber.ru/assets/media/book-images3/neoficialnaya-kulinarnaya-kniga-hogvartsa/Neoficialnaya%20kulinarnaya%20kniga%20Hogwartsa-cover3D-800-transp-min.png",
+        "itemsLeft": 4,
+        "code": 0
+    },
+    {
+        "name": "Куртка",
+        "price": 1000,
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlNhPqBa7hrtzo8uGMZ7rCm7nemCLYKXbs6w&usqp=CAU",
+        "itemsLeft": 3,
+        "code": 1
+    },
+    {
+        "name": "Ботинки",
+        "price": 5000,
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgE7IBlE6Kt90q5euKc6ijmox-7iFhSlOtPw&usqp=CAU",
+        "itemsLeft": 2,
+        "code": 2
+    },
+    {
+        "name": "Телевизор",
+        "price": 10000,
+        "photo": "https://shop.by/images/samsung_ue32t5300au_1.jpg",
+        "itemsLeft": 1,
+        "code": 3
+    }
+]

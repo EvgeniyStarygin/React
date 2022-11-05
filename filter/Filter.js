@@ -8,44 +8,42 @@ var Filter = React.createClass({
     return {
       isSorted: false,
       filterByText: "",
-      wordsToShow: this.props.words,
+      currWords: this.props.words,
     };
   },
 
   showWords: function () {
-    var arr = this.state.wordsToShow.filter((word) =>
-      word.includes(this.state.filterByText)
-    );
-    return arr.map((word, index) => React.DOM.div({ key: index }, word));
+    var arr = null;
+    if (this.state.filterByText) {
+      arr = this.props.words.filter((word) =>
+        word.includes(this.state.filterByText)
+      );
+    } else {
+      arr = [...this.props.words];
+    }
+    if (this.state.isSorted) {
+      arr.sort();
+    }
+    this.setState({ currWords: arr });
   },
 
   sortWords: function (EO) {
-    /*this.setState({ isSorted: !this.state.isSorted }, () => {
-      this.setState({
-        wordsToShow: this.state.isSorted
-          ? this.props.words.slice(0).sort()
-          : this.props.words,
-      });
-    });*/
-    this.setState({ isSorted: !this.state.isSorted });
-    this.setState({wordsToShow: EO.target.checked
-          ? this.props.words.slice(0).sort()
-          : this.props.words,
-      });
+    this.setState({ isSorted: EO.target.checked }, this.showWords);
   },
 
   reset: function (EO) {
-    this.setState({ isSorted: false });
-    this.setState({ filterByText: "" });
-    this.setState({ wordsToShow: this.props.words });
+    this.setState(
+      {
+        isSorted: false,
+        filterByText: "",
+      },
+      this.showWords
+    );
   },
 
   filterWords: function (EO) {
-    var value = EO.target.value;
-    this.setState({ filterByText: value });
+    this.setState({ filterByText: EO.target.value }, this.showWords);
   },
-
-  findWords: function () {},
 
   render: function () {
     return React.DOM.div(
@@ -73,7 +71,10 @@ var Filter = React.createClass({
         },
         "Сброс"
       ),
-      React.DOM.div({ className: "WordsBlock" }, this.showWords())
+      React.DOM.textarea({
+        className: "WordsBlock",
+        value: this.state.currWords.join("\n"),
+      })
     );
   },
 });
