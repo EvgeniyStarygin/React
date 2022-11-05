@@ -72,6 +72,7 @@ class Shop extends React.Component {
   }
 
   addNewProduct = () => {
+    this.disableActions();
     this.setState({ selectedProductCode: null, productCardWorkMode: "new" });
   };
 
