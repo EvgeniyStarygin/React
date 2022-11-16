@@ -1,0 +1,11 @@
+.new-client-form {
+    border: 1px solid black;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.new-client-form div span{
+    display: inline-block;
+    width: 100px;
+}

@@ -1,0 +1,21 @@
+﻿.ProductInfoCard {
+  border: 5px solid black;
+  width: 200px;
+  height: fit-content;
+  margin-top: 20px;
+}
+
+.ProductInfoCard h3 {
+  background-color: rgb(9, 205, 195);
+  text-align: center;
+}
+
+.ProductInfoCard img {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.ProductInfoCard div {
+  margin: 10px;
+}

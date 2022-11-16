@@ -1,0 +1,9 @@
+table.clients {
+    margin: 10px 0;
+    border-collapse: collapse;
+}
+
+table.clients th {
+    padding: 10px;
+    text-align: center;
+}
