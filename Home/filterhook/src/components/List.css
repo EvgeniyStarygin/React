@@ -1,0 +1,7 @@
+.WordsBlock {
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
